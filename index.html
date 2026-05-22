@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keisuke Masuo | FOMUS Founder</title>
+  <meta name="description" content="Keisuke Masuo - FOMUS Founder. Japanese culture, AI, photography, entertainment and global community." />
+  <style>
+    :root {
+      --bg: #dcebdc;
+      --ink: #161412;
+      --muted: #6f675e;
+      --line: rgba(22, 20, 18, 0.12);
+      --card: rgba(255, 255, 255, 0.78);
+      --dark: #11100e;
+      --gold: #b9975b;
+      --gold-soft: #e8dcc4;
+      --radius: 28px;
+      --shadow: 0 24px 80px rgba(22, 20, 18, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+      background:
+        linear-gradient(138deg, rgba(183, 211, 132, 0.50) 0 16%, transparent 16% 100%),
+        linear-gradient(32deg, transparent 0 42%, rgba(93, 181, 142, 0.34) 42% 62%, transparent 62% 100%),
+        linear-gradient(162deg, transparent 0 58%, rgba(230, 204, 124, 0.32) 58% 78%, transparent 78% 100%),
+        linear-gradient(180deg, #f6faed 0%, #d6ead6 38%, #a9d9c2 72%, #e4ddb2 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      line-height: 1.75;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, transparent 0 13%, rgba(255, 255, 255, 0.42) 13% 32%, transparent 32% 100%),
+        linear-gradient(52deg, transparent 0 60%, rgba(57, 151, 104, 0.24) 60% 76%, transparent 76% 100%),
+        linear-gradient(146deg, transparent 0 68%, rgba(201, 166, 77, 0.20) 68% 84%, transparent 84% 100%);
+      mix-blend-mode: soft-light;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.28) 0,
+        rgba(255, 255, 255, 0.28) 1px,
+        transparent 1px,
+        transparent 5px
+      );
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .lang-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 30;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 42px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.70);
+      color: var(--ink);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 12px 34px rgba(22, 20, 18, 0.10);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      cursor: pointer;
+    }
+
+    .lang-toggle span {
+      opacity: 0.42;
+    }
+
+    html[lang="ja"] .lang-toggle .lang-ja,
+    html[lang="en"] .lang-toggle .lang-en {
+      opacity: 1;
+    }
+
+    .hero {
+      min-height: 84vh;
+      display: grid;
+      place-items: center;
+      padding: 64px 0 56px;
+    }
+
+    .intro-video-section {
+      padding: 0 0 62px;
+    }
+
+    .intro-video {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.42);
+      box-shadow: 0 22px 70px rgba(22, 20, 18, 0.12);
+    }
+
+    .intro-video video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--dark);
+    }
+
+    .lit-profile {
+      width: min(620px, 100%);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.70);
+      box-shadow: 0 28px 90px rgba(72, 63, 150, 0.22);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      text-align: center;
+    }
+
+    .lit-avatar {
+      width: 132px;
+      height: 132px;
+      margin: 42px auto 18px;
+      position: relative;
+      z-index: 2;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 7px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 18px 44px rgba(22, 20, 18, 0.18);
+      background: var(--gold-soft);
+    }
+
+    .lit-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 38%;
+    }
+
+    .lit-content {
+      padding: 0 32px 34px;
+    }
+
+    .profile-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .profile-link {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--ink);
+      box-shadow: 0 10px 28px rgba(22, 20, 18, 0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .profile-link svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .profile-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(22, 20, 18, 0.16);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: clamp(40px, 4.8vw, 58px);
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .lit-content h1 {
+      white-space: nowrap;
+    }
+
+    .display-name {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-title-ja {
+      display: block;
+      margin-top: 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+      letter-spacing: 0;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    html[lang="en"] .hero-title-ja,
+    html[lang="en"] .lead {
+      white-space: normal;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.56);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.dark {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+      box-shadow: 0 14px 36px rgba(17, 16, 14, 0.18);
+    }
+
+    .visual {
+      position: relative;
+      min-height: 580px;
+      border-radius: 44px;
+      overflow: hidden;
+      background: var(--dark);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 50%;
+    }
+
+    .visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.46)),
+        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.22), transparent 28%);
+      z-index: 1;
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 34px;
+      display: grid;
+      place-items: start end;
+      color: rgba(255, 255, 255, 0.84);
+      text-align: right;
+      padding: 28px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .photo-placeholder strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 46px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .photo-placeholder span {
+      max-width: 360px;
+      display: block;
+      font-size: 13px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .floating-card {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      min-width: 0;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .stat span {
+      font-size: 11px;
+      line-height: 1.35;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    section {
+      padding: 76px 0;
+      scroll-margin-top: 96px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: clamp(30px, 4.6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .section-copy {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .identity-card,
+    .service-card,
+    .other-project-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 38px rgba(22, 20, 18, 0.05);
+    }
+
+    .identity-card {
+      padding: 14px 14px 20px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .identity-media {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .identity-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(22, 20, 18, 0.08);
+      background: var(--gold-soft);
+    }
+
+    .identity-image.founder {
+      object-position: center;
+    }
+
+    .identity-image.photographer {
+      object-position: 52% 44%;
+    }
+
+    .identity-image.ai {
+      object-position: 68% center;
+    }
+
+    .identity-image.dao {
+      object-position: center;
+    }
+
+    .identity-image.community {
+      object-position: center;
+    }
+
+    .identity-image.entertainment {
+      object-position: center;
+    }
+
+    .identity-logo-hero {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      border: 1px solid rgba(22, 20, 18, 0.08);
+      overflow: hidden;
+      background: var(--gold-soft);
+    }
+
+    .identity-logo-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .icon {
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--gold-soft);
+      margin-bottom: 20px;
+    }
+
+    .identity-media .icon {
+      display: none;
+    }
+
+    .identity-card h3,
+    .service-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .identity-card p,
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .identity-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .identity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .service-card {
+      padding: 24px;
+    }
+
+    .other-projects {
+      margin-top: 34px;
+    }
+
+    .other-projects h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .other-project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .other-project-card {
+      min-height: 118px;
+      padding: 12px 12px 12px 18px;
+      display: grid;
+      grid-template-columns: 1fr 112px;
+      gap: 16px;
+      align-items: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .other-project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .other-project-card b {
+      display: block;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .other-project-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+
+    .other-project-thumb {
+      width: 112px;
+      height: 94px;
+      border-radius: 22px;
+      object-fit: cover;
+      border: 1px solid rgba(22, 20, 18, 0.08);
+      box-shadow: 0 8px 22px rgba(22, 20, 18, 0.10);
+    }
+
+    .other-project-thumb.logo-thumb {
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .other-project-thumb.kumiki-thumb {
+      object-position: 58% center;
+    }
+
+    .dark-band {
+      margin: 46px 0 0;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.66);
+      color: var(--ink);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 18px 58px rgba(22, 20, 18, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .why-section {
+      padding-top: 28px;
+    }
+
+    .why-band {
+      margin-top: 0;
+    }
+
+    .dark-band p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+      margin: 0 0 18px;
+    }
+
+    .quote {
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: clamp(28px, 4vw, 52px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .dark-band .quote {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+      font-size: clamp(24px, 3.4vw, 38px);
+      line-height: 1.28;
+      font-weight: 800;
+    }
+
+    .dark-band .btn {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+      box-shadow: 0 12px 28px rgba(17, 16, 14, 0.14);
+    }
+
+    footer {
+      padding: 44px 0 54px;
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .dark-band {
+        grid-template-columns: 1fr;
+      }
+
+      .visual {
+        min-height: 460px;
+      }
+
+      .grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .other-project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+
+    }
+
+    @media (max-width: 640px) {
+      body {
+        line-height: 1.68;
+      }
+
+      .page {
+        width: min(100% - 20px, 1120px);
+      }
+
+      .lang-toggle {
+        top: 12px;
+        right: 12px;
+        min-height: 38px;
+        padding: 7px 10px;
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 28px 0 34px;
+      }
+
+      .intro-video-section {
+        padding: 0 0 48px;
+      }
+
+      .intro-video {
+        border-radius: 28px;
+      }
+
+      .lit-profile {
+        border-radius: 30px;
+      }
+
+      .lit-avatar {
+        width: 112px;
+        height: 112px;
+        margin-top: 30px;
+        margin-bottom: 14px;
+        border-width: 6px;
+      }
+
+      .lit-content {
+        padding: 0 20px 26px;
+      }
+
+      h1 {
+        font-size: clamp(24px, 7.4vw, 34px);
+        line-height: 1.16;
+      }
+
+      .hero-title-ja {
+        margin-top: 14px;
+        font-size: clamp(11px, 3.05vw, 14px);
+        line-height: 1.45;
+      }
+
+      .lead {
+        margin-top: 18px;
+        font-size: clamp(9px, 2.45vw, 12px);
+        line-height: 1.5;
+      }
+
+      .profile-links {
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .profile-link {
+        width: 46px;
+        height: 46px;
+      }
+
+      .profile-link svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 46px;
+        padding: 11px 15px;
+        font-size: 13px;
+      }
+
+      .visual {
+        min-height: auto;
+        aspect-ratio: 4 / 5;
+        border-radius: 28px;
+      }
+
+      .photo-placeholder {
+        inset: 12px;
+        border-radius: 22px;
+        padding: 16px;
+      }
+
+      .photo-placeholder span {
+        max-width: 220px;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .floating-card {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .stat {
+        padding: 10px 8px;
+        border-radius: 14px;
+      }
+
+      .stat b {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .stat span {
+        display: block;
+        font-size: 9px;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+      }
+
+      section {
+        padding: 50px 0;
+        scroll-margin-top: 78px;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .section-kicker {
+        font-size: 11px;
+      }
+
+      h2 {
+        font-size: clamp(28px, 8vw, 36px);
+        line-height: 1.18;
+      }
+
+      .section-copy {
+        margin-top: 14px;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .grid-5,
+      .services,
+      .other-project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-5,
+      .services,
+      .other-project-grid {
+        gap: 10px;
+      }
+
+      .identity-card {
+        min-height: auto;
+        padding: 14px 14px 18px;
+      }
+
+      .icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        margin-bottom: 14px;
+      }
+
+      .identity-logo-hero {
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+      }
+
+      .identity-media {
+        margin-bottom: 16px;
+      }
+
+      .identity-image {
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+      }
+
+      .quote {
+        font-size: clamp(27px, 8vw, 36px);
+        line-height: 1.2;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .other-projects {
+        margin-top: 28px;
+      }
+
+      .other-project-card {
+        min-height: auto;
+        padding: 12px 12px 12px 20px;
+        border-radius: 22px;
+        grid-template-columns: 1fr 118px;
+        gap: 14px;
+      }
+
+      .other-project-thumb {
+        width: 118px;
+        height: 96px;
+        border-radius: 20px;
+      }
+
+      .dark-band {
+        margin-top: 38px;
+        padding: 24px;
+        border-radius: 28px;
+        gap: 18px;
+      }
+
+      .why-section {
+        padding-top: 8px;
+      }
+
+      .why-band {
+        margin-top: 0;
+      }
+
+      .dark-band p {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      footer {
+        display: block;
+        padding: 34px 0 42px;
+        line-height: 1.8;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 23px;
+      }
+
+      .hero-title-ja {
+        font-size: 10.5px;
+      }
+
+      .lead {
+        font-size: 8.8px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <button class="lang-toggle" type="button" aria-label="Switch language" aria-pressed="false">
+    <span class="lang-ja">JP</span>
+    /
+    <span class="lang-en">EN</span>
+  </button>
+  <div class="page">
+    <main id="top">
+      <section class="hero">
+        <div class="lit-profile">
+          <div class="lit-avatar">
+            <img src="assets/profile-hero.jpg" alt="FOMUSの枡を持つ増尾圭亮" />
+          </div>
+          <div class="lit-content">
+            <h1>
+              <span class="display-name" data-ja="Keisuke Masuo (まっすー)" data-en="Kei (MaSU)">Keisuke Masuo (まっすー)</span>
+              <span class="hero-title-ja" data-ja="日本文化 × AI × エンタメで、世界をつなぐ。" data-en="Bringing Japanese culture, AI, and entertainment to the world.">日本文化 × AI × エンタメで、世界をつなぐ。</span>
+            </h1>
+            <p class="lead" data-ja="FOMUS代表 / AI導入コンサルタント / 笛吹市地域おこし協力隊DAO" data-en="Founder of FOMUS / AI Implementation Consultant / Fuefuki City Regional Revitalization DAO">
+              FOMUS代表 / AI導入コンサルタント / 笛吹市地域おこし協力隊DAO
+            </p>
+            <div class="profile-links" aria-label="Links">
+              <a class="profile-link" href="https://www.instagram.com/masumasumasuo7" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="instagramGradient" x1="4" y1="20" x2="20" y2="4" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#feda75" />
+                      <stop offset="0.32" stop-color="#fa7e1e" />
+                      <stop offset="0.62" stop-color="#d62976" />
+                      <stop offset="1" stop-color="#4f5bd5" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="4" width="16" height="16" rx="4.6" fill="url(#instagramGradient)" />
+                  <circle cx="12" cy="12" r="3.35" fill="none" stroke="#fff" stroke-width="1.8" />
+                  <circle cx="16.7" cy="7.4" r="1.05" fill="#fff" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://note.com/kei_masu" target="_blank" rel="noopener" aria-label="note">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="4" width="14" height="16" rx="3" fill="#161412" />
+                  <path d="M9 15V9h2.1l2.8 3.7V9H16v6h-2.1l-2.8-3.7V15H9Z" fill="#fff" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://www.youtube.com/@masu_FOMUS" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3.2" y="6.4" width="17.6" height="11.2" rx="3.1" fill="#ff0033" />
+                  <path d="M10.4 9.1v5.8l5-2.9-5-2.9Z" fill="#fff" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://open.spotify.com/intl-ja/artist/3plvQP7b3NcJOuR45P7lk3?si=asugx3kuRqi5NcMsM4S2Vw" target="_blank" rel="noopener" aria-label="Spotify">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" fill="#1db954" />
+                  <path d="M7.8 9.4c2.8-.8 6.1-.5 8.4.8M8.4 12c2.2-.6 4.8-.4 6.7.6M9.1 14.4c1.6-.4 3.5-.3 4.9.5" fill="none" stroke="#11100e" stroke-width="1.45" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://substack.com/@masumasuo" target="_blank" rel="noopener" aria-label="Substack">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 5h12v2.2H6V5Zm0 4.1h12v2.2H6V9.1Zm0 4.1h12V20l-6-3.4L6 20v-6.8Z" fill="#ff6719" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-video-section" aria-label="Introduction video">
+        <div class="intro-video">
+          <video src="assets/hero.mp4" autoplay muted loop playsinline controls preload="metadata"></video>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <div>
+            <h2 data-ja="プロフィール" data-en="Profile">プロフィール</h2>
+          </div>
+        </div>
+
+        <div class="grid-5">
+          <a class="identity-card" href="https://www.fomus.jp/" target="_blank" rel="noopener">
+            <div>
+              <div class="identity-media">
+                <div class="identity-logo-hero"><img src="assets/kumiki.jpg" alt="FOMUSの枡" loading="lazy" /></div>
+              </div>
+              <h3 data-ja="FOMUS代表" data-en="Founder of FOMUS">FOMUS代表</h3>
+              <p data-ja="1300年続く日本の伝統工芸「枡」を世界へ。<br>FOMUSを通じて、日本文化の価値を発信。" data-en="Bringing masu, a 1,300-year-old Japanese craft, to the world.<br>Through FOMUS, I share the value of Japanese culture.">1300年続く日本の伝統工芸「枡」を世界へ。<br>FOMUSを通じて、日本文化の価値を発信。</p>
+            </div>
+          </a>
+          <a class="identity-card" href="https://www.fuefuki-kanko.jp/" target="_blank" rel="noopener">
+            <div>
+              <div class="identity-media">
+                <img class="identity-image dao" src="assets/community-event.jpg" alt="地域とコミュニティの活動" loading="lazy" />
+              </div>
+              <h3 data-ja="笛吹市地域おこし協力隊DAO" data-en="Fuefuki Regional Revitalization DAO">笛吹市地域おこし協力隊DAO</h3>
+              <p data-ja="地域と人をつなぐコミュニティづくり。<br>共創プロジェクトや交流の場を企画。" data-en="Building communities that connect local culture and people.<br>Planning co-creation projects and spaces for exchange.">地域と人をつなぐコミュニティづくり。<br>共創プロジェクトや交流の場を企画。</p>
+            </div>
+          </a>
+          <a class="identity-card" href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener">
+            <div>
+              <div class="identity-media">
+                <img class="identity-image entertainment" src="assets/kuku.jpg" alt="KUKUの世界観ビジュアル" loading="lazy" />
+              </div>
+              <h3 data-ja="KUKU" data-en="KUKU">KUKU</h3>
+              <p data-ja="KUKUなどのIP・物語を企画・制作。<br>音楽・映像・コンテンツ制作も展開。" data-en="Creating original IP and story worlds, including KUKU.<br>Expanding into music, video, and digital content.">KUKUなどのIP・物語を企画・制作。<br>音楽・映像・コンテンツ制作も展開。</p>
+            </div>
+          </a>
+          <a class="identity-card" href="https://studio.fomus.jp/" target="_blank" rel="noopener">
+            <div>
+              <div class="identity-media">
+                <img class="identity-image ai" src="assets/ai-business.png" alt="AI導入とビジネス相談のイメージ" loading="lazy" />
+              </div>
+              <h3 data-ja="AI導入コンサルタント" data-en="AI Implementation Consultant">AI導入コンサルタント</h3>
+              <p data-ja="企業のAI導入・教育支援を実施。<br>業務効率化や活用定着をサポート。" data-en="Helping companies adopt AI through training and implementation.<br>Supporting workflow improvement and long-term adoption.">企業のAI導入・教育支援を実施。<br>業務効率化や活用定着をサポート。</p>
+            </div>
+          </a>
+          <a class="identity-card" href="https://www.instagram.com/masumasumasuo7" target="_blank" rel="noopener">
+            <div>
+              <div class="identity-media">
+                <img class="identity-image community" src="assets/fomus-guild.jpg" alt="FOMUS GUILDのイベントで集まるコミュニティ" loading="lazy" />
+              </div>
+              <h3 data-ja="コミュニティ運営・イベント企画" data-en="Community & Event Producer">コミュニティ運営・イベント企画</h3>
+              <p data-ja="人と人がつながる場を企画・運営。<br>文化交流やコミュニティづくりを実施。" data-en="Designing and running spaces where people connect.<br>Creating cultural exchange events and communities.">人と人がつながる場を企画・運営。<br>文化交流やコミュニティづくりを実施。</p>
+            </div>
+          </a>
+          <a class="identity-card" href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener">
+            <div>
+              <div class="identity-media">
+                <img class="identity-image photographer" src="assets/photographer.jpg" alt="カメラを構える増尾圭亮" loading="lazy" />
+              </div>
+              <h3 data-ja="フォトグラファー" data-en="Photographer">フォトグラファー</h3>
+              <p data-ja="40カ国以上で活動する写真家。<br>人物・ブランド・イベント撮影を手がける。" data-en="A photographer who has worked across 40+ countries.<br>Portrait, brand, and event photography.">40カ国以上で活動する写真家。<br>人物・ブランド・イベント撮影を手がける。</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker" data-ja="Work With Me" data-en="Work With Me">Work With Me</div>
+            <h2 data-ja="相談できること。" data-en="How We Can Work Together">相談できること。</h2>
+          </div>
+          <p class="section-copy" data-ja="撮影、AI導入、ウェブ制作、講演・イベント登壇など、個人・企業・地域のプロジェクトを一緒に形にします。まずはお気軽にご相談ください。" data-en="Photography, AI implementation, website production, talks, and event appearances. I help individuals, companies, and local communities turn ideas into real projects. Feel free to reach out, even if the idea is still early.">
+            撮影、AI導入、ウェブ制作、講演・イベント登壇など、個人・企業・地域のプロジェクトを一緒に形にします。まずはお気軽にご相談ください。
+          </p>
+        </div>
+
+        <div class="services">
+          <div class="service-card">
+            <h3 data-ja="撮影" data-en="Photography">撮影</h3>
+            <p data-ja="人物撮影、ブランド撮影、イベント撮影。" data-en="Portrait, brand, and event photography.">人物撮影、ブランド撮影、イベント撮影。</p>
+          </div>
+          <div class="service-card">
+            <h3 data-ja="AI導入コンサル" data-en="AI Consulting">AI導入コンサル</h3>
+            <p data-ja="生成AI活用、業務改善、研修、実装支援。" data-en="Generative AI use cases, workflow improvement, training, and implementation.">生成AI活用、業務改善、研修、実装支援。</p>
+          </div>
+          <div class="service-card">
+            <h3 data-ja="ウェブ制作" data-en="Website Production">ウェブ制作</h3>
+            <p data-ja="プロフィールサイト、LP、ブランドサイト制作。" data-en="Profile sites, landing pages, and brand websites.">プロフィールサイト、LP、ブランドサイト制作。</p>
+          </div>
+          <div class="service-card">
+            <h3 data-ja="講演会依頼" data-en="Talks & Events">講演会依頼</h3>
+            <p data-ja="日本文化、AI、海外展開、これからの働き方。" data-en="Japanese culture, AI, global expansion, and future ways of working.">日本文化、AI、海外展開、これからの働き方。</p>
+          </div>
+        </div>
+
+        <div class="other-projects" aria-label="Other Projects">
+          <h3 data-ja="その他の携わる事業" data-en="Other Projects">その他の携わる事業</h3>
+          <div class="other-project-grid">
+            <a class="other-project-card" href="https://guild.fomusglobal.com/" target="_blank" rel="noopener">
+              <div>
+                <b>FOMUS GUILD</b>
+                <span data-ja="世界をつなぐ文化コミュニティ<br>日本文化・創造・挑戦を共創するメンバーシップ" data-en="A culture community connecting people around the world.<br>A membership for Japanese culture, creativity, and bold ideas.">世界をつなぐ文化コミュニティ<br>日本文化・創造・挑戦を共創するメンバーシップ</span>
+              </div>
+              <img class="other-project-thumb" src="assets/fomus-guild.jpg" alt="FOMUS GUILD" loading="lazy" />
+            </a>
+            <a class="other-project-card" href="https://kumiki.fomusglobal.com/" target="_blank" rel="noopener">
+              <div>
+                <b>KUMIKI</b>
+                <span data-ja="枡から生まれるジュエリーブランド<br>日本の木工技術と美しさを纏うアクセサリー" data-en="A jewelry brand born from masu craftsmanship.<br>Accessories that carry the beauty of Japanese woodworking.">枡から生まれるジュエリーブランド<br>日本の木工技術と美しさを纏うアクセサリー</span>
+              </div>
+              <img class="other-project-thumb kumiki-thumb" src="assets/KUMIKI.png" alt="KUMIKI" loading="lazy" />
+            </a>
+            <a class="other-project-card" href="https://kanade-ai.com/" target="_blank" rel="noopener">
+              <div>
+                <b>KANADE AI</b>
+                <span data-ja="AI導入をもっと身近に<br>予約・接客・業務改善を支えるAIソリューション" data-en="Making AI adoption easier and more practical.<br>AI solutions for booking, customer service, and operations.">AI導入をもっと身近に<br>予約・接客・業務改善を支えるAIソリューション</span>
+              </div>
+              <img class="other-project-thumb logo-thumb" src="assets/KANADE%20%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png" alt="KANADE AI" loading="lazy" />
+            </a>
+            <a class="other-project-card" href="https://terroirhub.com/" target="_blank" rel="noopener">
+              <div>
+                <b>Terroir HUB</b>
+                <span data-ja="土地の魅力を世界へ届ける<br>地域文化・食・工芸をつなぐ越境DXプラットフォーム" data-en="Bringing the character of local places to the world.<br>A cross-border platform for culture, food, and craft.">土地の魅力を世界へ届ける<br>地域文化・食・工芸をつなぐ越境DXプラットフォーム</span>
+              </div>
+              <img class="other-project-thumb" src="assets/22E8DEB1-4913-4ECD-9553-A64A7BA2CCF3_1_201_a.jpeg" alt="Terroir HUB" loading="lazy" />
+            </a>
+            <a class="other-project-card" href="https://silva.fomus.jp/" target="_blank" rel="noopener">
+              <div>
+                <b>SILVA</b>
+                <span data-ja="自然と戦略が交わるカードゲーム<br>森をテーマにした対戦型オリジナルゲーム" data-en="A card game where nature and strategy meet.<br>An original head-to-head game set in the forest.">自然と戦略が交わるカードゲーム<br>森をテーマにした対戦型オリジナルゲーム</span>
+              </div>
+              <img class="other-project-thumb" src="assets/ChatGPT%20Image%202026%E5%B9%B45%E6%9C%8820%E6%97%A5%2016_04_34.png" alt="SILVA" loading="lazy" />
+            </a>
+            <a class="other-project-card" href="https://sagishimagallery.fomus.jp/" target="_blank" rel="noopener">
+              <div>
+                <b data-ja="佐木島アートギャラリー" data-en="Sagishima Art Gallery">佐木島アートギャラリー</b>
+                <span data-ja="島と枡がつくる文化空間<br>地域にひらくアートプロジェクト" data-en="A cultural space shaped by an island and masu.<br>An art project open to the local community.">島と枡がつくる文化空間<br>地域にひらくアートプロジェクト</span>
+              </div>
+              <img class="other-project-thumb" src="assets/%E4%BD%90%E6%9C%A8%E5%B3%B6%E3%82%A2%E3%83%BC%E3%83%88%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC%E5%AE%8C%E6%88%90.png" alt="佐木島アートギャラリー" loading="lazy" />
+            </a>
+          </div>
+        </div>
+
+        <div class="dark-band">
+          <div>
+            <div class="section-kicker" data-ja="Contact" data-en="Contact">Contact</div>
+            <div class="quote" data-ja="プロジェクトの相談はこちら。" data-en="Let’s talk about your project.">プロジェクトの相談はこちら。</div>
+          </div>
+          <div>
+            <p data-ja="撮影、AI導入、ウェブ制作、講演・イベント登壇など、まずは内容が固まっていない段階でもお気軽にご相談ください。" data-en="For photography, AI implementation, website production, talks, or event appearances, feel free to reach out even before the details are fully decided.">
+              撮影、AI導入、ウェブ制作、講演・イベント登壇など、まずは内容が固まっていない段階でもお気軽にご相談ください。
+            </p>
+            <a class="btn" href="https://www.instagram.com/masumasumasuo7" target="_blank" rel="noopener">Instagram DM</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© Keisuke Masuo / FOMUS</div>
+      <div data-ja="Japanese Culture × AI × Entertainment" data-en="Japanese Culture × AI × Entertainment">Japanese Culture × AI × Entertainment</div>
+    </footer>
+  </div>
+  <script>
+    const languageButton = document.querySelector(".lang-toggle");
+    const translatableElements = document.querySelectorAll("[data-ja][data-en]");
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function getSavedLanguage() {
+      try {
+        return localStorage.getItem("profileLanguage");
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function saveLanguage(language) {
+      try {
+        localStorage.setItem("profileLanguage", language);
+      } catch (error) {
+        // Language switching should still work when localStorage is unavailable on file://.
+      }
+    }
+
+    function setLanguage(language) {
+      const isEnglish = language === "en";
+      document.documentElement.lang = language;
+      document.title = isEnglish
+        ? "Keisuke Masuo (Massu) | FOMUS Founder"
+        : "Keisuke Masuo | FOMUS Founder";
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          "content",
+          isEnglish
+            ? "Keisuke Masuo (Massu), founder of FOMUS. Japanese culture, AI, photography, entertainment, and global community."
+            : "Keisuke Masuo - FOMUS Founder. Japanese culture, AI, photography, entertainment and global community."
+        );
+      }
+      translatableElements.forEach((element) => {
+        element.innerHTML = element.dataset[language];
+      });
+      languageButton.setAttribute("aria-pressed", String(isEnglish));
+      saveLanguage(language);
+    }
+
+    const savedLanguage = getSavedLanguage() === "en" ? "en" : "ja";
+    setLanguage(savedLanguage);
+
+    languageButton.addEventListener("click", () => {
+      setLanguage(document.documentElement.lang === "ja" ? "en" : "ja");
+    });
+  </script>
+</body>
+</html>
