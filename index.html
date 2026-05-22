@@ -618,6 +618,177 @@
       object-position: 58% center;
     }
 
+    .global-activity {
+      padding-top: 28px;
+    }
+
+    .global-card {
+      overflow: hidden;
+      border: 1px solid rgba(232, 245, 225, 0.54);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(217, 203, 134, 0.20), transparent 34%),
+        linear-gradient(135deg, rgba(24, 74, 54, 0.94), rgba(30, 93, 68, 0.88) 52%, rgba(79, 128, 84, 0.82));
+      color: #fff;
+      box-shadow: 0 24px 80px rgba(22, 64, 46, 0.20);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .global-layout {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 28px;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .global-card .section-kicker {
+      color: #dfeecb;
+    }
+
+    .global-title {
+      margin: 0;
+      font-size: clamp(28px, 4.2vw, 48px);
+      color: #fff;
+    }
+
+    .global-tag {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .global-copy {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .global-slideshow {
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .global-track {
+      display: flex;
+      gap: 12px;
+      transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .global-slide {
+      flex: 0 0 88%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .global-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .global-slide:hover img {
+      transform: scale(1.03);
+    }
+
+    .global-dots {
+      display: flex;
+      gap: 5px;
+      margin-top: 14px;
+    }
+
+    .global-dot {
+      width: 5px;
+      height: 5px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.24);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .global-dot.active {
+      width: 18px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .global-caption-area {
+      min-height: 82px;
+      margin-top: 16px;
+    }
+
+    .global-caption {
+      display: none;
+    }
+
+    .global-caption.active {
+      display: block;
+      animation: capFade 0.35s ease;
+    }
+
+    @keyframes capFade {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .global-caption-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .global-flag {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .global-country {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .global-badge {
+      padding: 3px 8px;
+      border: 1px solid rgba(223, 238, 203, 0.46);
+      border-radius: 999px;
+      color: #eaf4d4;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .global-year {
+      color: rgba(255, 255, 255, 0.46);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .global-caption p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 12.5px;
+      line-height: 1.75;
+    }
+
     .dark-band {
       margin: 46px 0 0;
       border-radius: 34px;
@@ -700,6 +871,21 @@
 
       .other-project-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .global-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 22px;
+      }
+
+      .global-card {
+        border-radius: 28px;
+      }
+
+      .global-slide {
+        flex-basis: 86%;
+        border-radius: 20px;
       }
 
 
@@ -925,6 +1111,27 @@
         border-radius: 20px;
       }
 
+      .global-activity {
+        padding-top: 14px;
+      }
+
+      .global-layout {
+        padding: 18px;
+      }
+
+      .global-slideshow,
+      .global-slide {
+        border-radius: 20px;
+      }
+
+      .global-title {
+        font-size: clamp(27px, 8vw, 36px);
+      }
+
+      .global-caption-area {
+        min-height: 110px;
+      }
+
       .dark-band {
         margin-top: 38px;
         padding: 24px;
@@ -1104,6 +1311,89 @@
         </div>
       </section>
 
+      <section class="global-activity" aria-label="Global activities">
+        <div class="global-card">
+          <div class="global-layout">
+            <div class="global-left">
+              <div class="section-kicker" data-ja="Global Activities" data-en="Global Activities">Global Activities</div>
+              <h2 class="global-title" data-ja="海外活動" data-en="Global Work">海外活動</h2>
+              <p class="global-tag" data-ja="日本文化の国際展開を、実践の場から。" data-en="Bringing Japanese culture abroad through real-world projects.">日本文化の国際展開を、実践の場から。</p>
+              <p class="global-copy" data-ja="海外の日本国大使館での展示を含む国際文化活動を通じ、枡・写真・イベント・コミュニティを世界へ届けています。" data-en="Through cultural projects including exhibitions at Japanese embassies, I share masu, photography, events, and community experiences with the world.">海外の日本国大使館での展示を含む国際文化活動を通じ、枡・写真・イベント・コミュニティを世界へ届けています。</p>
+            </div>
+
+            <div class="global-right">
+              <div class="global-slideshow">
+                <div class="global-track" id="globalTrack">
+                  <div class="global-slide"><img src="assets/global-slideshow/1.0.JPG" alt="FOMUS Global Ireland" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/2.jpg" alt="FOMUS Global Bahrain" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/3.jpg" alt="FOMUS Global Saudi Arabia" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/4.jpg" alt="FOMUS Global Bahrain Arabic" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/5.jpg" alt="FOMUS Global Dubai" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/6.jpg" alt="FOMUS Global Ireland community" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/7.jpg" alt="FOMUS Global France" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/8.jpg" alt="FOMUS Global SILVA" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/9.jpg" alt="Experience Japan Festival" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/10.jpg" alt="FOMUS Global Ireland castle" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/11.jpg" alt="Dubai Japan Fair" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/12.jpg" alt="Taiwan round trip" loading="lazy"></div>
+                </div>
+              </div>
+              <div class="global-dots" id="globalDots"></div>
+              <div class="global-caption-area" id="globalCaptionArea">
+                <div class="global-caption active">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge" data-ja="日本国大使館 展示" data-en="Japanese Embassy">日本国大使館 展示</span><span class="global-year">2024</span></div>
+                  <p data-ja="在アイルランド日本国大使館でのレセプションパーティー。日本酒とFOMUS枡のサービスを担当。" data-en="A reception at the Embassy of Japan in Ireland, serving Japanese sake with FOMUS masu.">在アイルランド日本国大使館でのレセプションパーティー。日本酒とFOMUS枡のサービスを担当。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge" data-ja="天皇誕生日祝賀レセプション" data-en="National Day Reception">天皇誕生日祝賀レセプション</span><span class="global-year">2026</span></div>
+                  <p data-ja="Sony・Nikonと並ぶ公式パートナーとしてバーレーン日本国大使館の祝賀会にて出展。" data-en="Exhibited at the Embassy of Japan in Bahrain as an official partner alongside Sony and Nikon.">Sony・Nikonと並ぶ公式パートナーとしてバーレーン日本国大使館の祝賀会にて出展。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇸🇦</span><span class="global-country">Saudi Arabia</span><span class="global-badge" data-ja="文化展示" data-en="Cultural Showcase">文化展示</span><span class="global-year">2026</span></div>
+                  <p data-ja="着物姿で「What is Masu?」を伝え続けた展示ブース。枡とKUMIKIジュエリーが並んだ。" data-en="A booth introducing “What is Masu?” with masu and KUMIKI jewelry displayed together.">着物姿で「What is Masu?」を伝え続けた展示ブース。枡とKUMIKIジュエリーが並んだ。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge" data-ja="ローカライズ展示" data-en="Localized Display">ローカライズ展示</span><span class="global-year">2026</span></div>
+                  <p data-ja="アラビア語ラベルを付けた枡を展示。現地の人々に届く形で、日本文化を紹介。" data-en="Displayed masu with Arabic labels, presenting Japanese culture in a way that resonated locally.">アラビア語ラベルを付けた枡を展示。現地の人々に届く形で、日本文化を紹介。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge" data-ja="グローバルコミュニティ" data-en="Global Community">グローバルコミュニティ</span><span class="global-year">2026</span></div>
+                  <p data-ja="ドバイで出会った世界各国の仲間たちと。多様な文化が交差する場所でイベントを主催。" data-en="Hosting events in Dubai, where people from many cultures meet and connect.">ドバイで出会った世界各国の仲間たちと。多様な文化が交差する場所でイベントを主催。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge" data-ja="コミュニティ形成" data-en="Community Building">コミュニティ形成</span><span class="global-year">2024〜</span></div>
+                  <p data-ja="ダブリンにて国際交流コミュニティを運営。枡を通じて国境を越えたつながりを育てる。" data-en="Running an international community in Dublin and building cross-border connections through masu.">ダブリンにて国際交流コミュニティを運営。枡を通じて国境を越えたつながりを育てる。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇫🇷</span><span class="global-country">France</span><span class="global-badge">Marathon du Médoc</span><span class="global-year">2024, 2025</span></div>
+                  <p data-ja="ボルドーのワイン産地を走るマラソンに参加。FOMUSユニフォームで日本文化を発信。" data-en="Joining the Marathon du Médoc in Bordeaux and sharing FOMUS through a cultural presence.">ボルドーのワイン産地を走るマラソンに参加。FOMUSユニフォームで日本文化を発信。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🌍</span><span class="global-country">Europe</span><span class="global-badge" data-ja="SILVAカードゲーム" data-en="SILVA Card Game">SILVAカードゲーム</span><span class="global-year">2024〜</span></div>
+                  <p data-ja="FOMUS制作カードゲーム「SILVA」を海外の仲間たちとプレイ。エンタメも国境を越えて広がる。" data-en="Playing the FOMUS card game SILVA with friends abroad, expanding entertainment across borders.">FOMUS制作カードゲーム「SILVA」を海外の仲間たちとプレイ。エンタメも国境を越えて広がる。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">Experience Japan Festival</span><span class="global-year">2024</span></div>
+                  <p data-ja="アイルランドのExperience Japan Festivalでフォトグラファーを担当。" data-en="Worked as a photographer at Experience Japan Festival in Ireland.">アイルランドのExperience Japan Festivalでフォトグラファーを担当。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge" data-ja="欧州拠点" data-en="European Base">欧州拠点</span><span class="global-year">2024</span></div>
+                  <p data-ja="FOMUSの欧州での活動拠点のひとつ、アイルランドのシャールビル城。" data-en="Charleville Castle in Ireland, one of the bases for FOMUS activities in Europe.">FOMUSの欧州での活動拠点のひとつ、アイルランドのシャールビル城。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge" data-ja="ドバイ日本フェア" data-en="Dubai Japan Fair">ドバイ日本フェア</span><span class="global-year">2025</span></div>
+                  <p data-ja="ドバイ日本フェア2025。浴衣姿の人々が集う会場で、フォトグラファーとして参加。" data-en="Joined Dubai Japan Fair 2025 as a photographer in a lively celebration of Japanese culture.">ドバイ日本フェア2025。浴衣姿の人々が集う会場で、フォトグラファーとして参加。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇹🇼</span><span class="global-country">Taiwan</span><span class="global-badge" data-ja="台湾一周ランニングプロジェクト" data-en="Taiwan Round-Island Run">台湾一周ランニングプロジェクト</span><span class="global-year">2023</span></div>
+                  <p data-ja="台湾を一周しながら、出会った人々へコラボ枡を届けた日本文化をつなぐ旅。" data-en="A journey around Taiwan, gifting collaborative masu to people met along the way.">台湾を一周しながら、出会った人々へコラボ枡を届けた日本文化をつなぐ旅。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="work">
         <div class="section-head">
           <div>
@@ -1250,6 +1540,51 @@
     languageButton.addEventListener("click", () => {
       setLanguage(document.documentElement.lang === "ja" ? "en" : "ja");
     });
+
+    const globalTrack = document.getElementById("globalTrack");
+    const globalSlides = globalTrack ? Array.from(globalTrack.querySelectorAll(".global-slide")) : [];
+    const globalDots = document.getElementById("globalDots");
+    const globalCaptions = Array.from(document.querySelectorAll("#globalCaptionArea .global-caption"));
+    let globalIndex = 0;
+    let globalTimer = null;
+
+    function showGlobalSlide(nextIndex) {
+      if (!globalSlides.length || !globalDots) return;
+      const dots = Array.from(globalDots.querySelectorAll(".global-dot"));
+      dots[globalIndex]?.classList.remove("active");
+      globalCaptions[globalIndex]?.classList.remove("active");
+      globalIndex = nextIndex;
+      const slideGap = 12;
+      const slideWidth = globalSlides[0].offsetWidth + slideGap;
+      globalTrack.style.transform = `translateX(-${globalIndex * slideWidth}px)`;
+      dots[globalIndex]?.classList.add("active");
+      globalCaptions[globalIndex]?.classList.add("active");
+    }
+
+    function startGlobalSlideshow() {
+      if (!globalSlides.length || !globalDots) return;
+      globalDots.innerHTML = "";
+      globalSlides.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.className = `global-dot${index === 0 ? " active" : ""}`;
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Global activity slide ${index + 1}`);
+        dot.addEventListener("click", () => {
+          clearInterval(globalTimer);
+          showGlobalSlide(index);
+          globalTimer = setInterval(() => {
+            showGlobalSlide((globalIndex + 1) % globalSlides.length);
+          }, 4200);
+        });
+        globalDots.appendChild(dot);
+      });
+      globalTimer = setInterval(() => {
+        showGlobalSlide((globalIndex + 1) % globalSlides.length);
+      }, 4200);
+      window.addEventListener("resize", () => showGlobalSlide(globalIndex));
+    }
+
+    startGlobalSlideshow();
   </script>
 </body>
 </html>
