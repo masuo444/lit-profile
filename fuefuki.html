@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>増尾圭亮（まっすー）| 笛吹市コミュニティプロデューサー</title>
+  <meta name="description" content="山梨県笛吹市を拠点に、コミュニティ・日本文化・AI・写真を通じて新しい価値づくりに取り組む増尾圭亮（まっすー）。" />
+  <style>
+    :root {
+      --bg: #dcebdc;
+      --ink: #161412;
+      --muted: #6f675e;
+      --line: rgba(22, 20, 18, 0.12);
+      --card: rgba(255, 255, 255, 0.78);
+      --dark: #11100e;
+      --gold: #b9975b;
+      --gold-soft: #e8dcc4;
+      --radius: 28px;
+      --shadow: 0 24px 80px rgba(22, 20, 18, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+      background:
+        linear-gradient(138deg, rgba(183, 211, 132, 0.50) 0 16%, transparent 16% 100%),
+        linear-gradient(32deg, transparent 0 42%, rgba(93, 181, 142, 0.34) 42% 62%, transparent 62% 100%),
+        linear-gradient(162deg, transparent 0 58%, rgba(230, 204, 124, 0.32) 58% 78%, transparent 78% 100%),
+        linear-gradient(180deg, #f6faed 0%, #d6ead6 38%, #a9d9c2 72%, #e4ddb2 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      line-height: 1.75;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, transparent 0 13%, rgba(255, 255, 255, 0.42) 13% 32%, transparent 32% 100%),
+        linear-gradient(52deg, transparent 0 60%, rgba(57, 151, 104, 0.24) 60% 76%, transparent 76% 100%),
+        linear-gradient(146deg, transparent 0 68%, rgba(201, 166, 77, 0.20) 68% 84%, transparent 84% 100%);
+      mix-blend-mode: soft-light;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.28) 0,
+        rgba(255, 255, 255, 0.28) 1px,
+        transparent 1px,
+        transparent 5px
+      );
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 30;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 42px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.70);
+      color: var(--ink);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 12px 34px rgba(22, 20, 18, 0.10);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: transform 0.25s ease;
+    }
+
+    .back-link:hover {
+      transform: translateX(-2px);
+    }
+
+    .back-link svg {
+      width: 13px;
+      height: 13px;
+      display: block;
+    }
+
+    .hero {
+      min-height: 84vh;
+      display: grid;
+      place-items: center;
+      padding: 64px 0 56px;
+    }
+
+    .lit-profile {
+      width: min(620px, 100%);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.70);
+      box-shadow: 0 28px 90px rgba(72, 63, 150, 0.22);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      text-align: center;
+    }
+
+    .lit-avatar {
+      width: 132px;
+      height: 132px;
+      margin: 42px auto 18px;
+      position: relative;
+      z-index: 2;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 7px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 18px 44px rgba(22, 20, 18, 0.18);
+      background: var(--gold-soft);
+    }
+
+    .lit-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 38%;
+    }
+
+    .lit-content {
+      padding: 0 32px 34px;
+    }
+
+    .location-chip {
+      display: inline-block;
+      padding: 4px 14px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(22, 20, 18, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: clamp(40px, 4.8vw, 58px);
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .lit-content h1 {
+      font-size: clamp(18px, 2vw, 26px);
+    }
+
+    .display-name {
+      display: block;
+    }
+
+    .hero-title-ja {
+      display: block;
+      margin-top: 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+      letter-spacing: 0;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-body {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .profile-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .profile-link {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--ink);
+      box-shadow: 0 10px 28px rgba(22, 20, 18, 0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .profile-link svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .profile-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(22, 20, 18, 0.16);
+    }
+
+    section {
+      padding: 76px 0;
+      scroll-margin-top: 96px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: clamp(30px, 4.6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .section-copy {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid-activities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .identity-card,
+    .service-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 38px rgba(22, 20, 18, 0.05);
+    }
+
+    .identity-card {
+      padding: 14px 14px 22px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .identity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .identity-media {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .identity-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(22, 20, 18, 0.08);
+      background: var(--gold-soft);
+    }
+
+    .identity-logo-hero {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 20px;
+      border: 1px solid rgba(22, 20, 18, 0.08);
+      overflow: hidden;
+      background: var(--gold-soft);
+    }
+
+    .identity-logo-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      padding: 24px;
+      background: #fff;
+    }
+
+    .identity-card h3 {
+      margin: 0 0 8px;
+      padding: 0 6px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .identity-card p {
+      margin: 0;
+      padding: 0 6px 4px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .consult-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .consult-row {
+      display: grid;
+      grid-template-columns: 72px 1fr 320px;
+      gap: 20px;
+      align-items: center;
+      padding: 22px 24px 22px 28px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 38px rgba(22, 20, 18, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .consult-row:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .consult-no {
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--ink);
+      align-self: start;
+      padding-top: 6px;
+      border-right: 1px solid var(--line);
+    }
+
+    .consult-body h3 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .consult-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .consult-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+      transition: opacity 0.25s ease, gap 0.25s ease;
+    }
+
+    .consult-link:hover {
+      opacity: 0.55;
+      gap: 12px;
+    }
+
+    .consult-photo {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(22, 20, 18, 0.08);
+      background: var(--gold-soft);
+    }
+
+    .consult-photo.logo {
+      object-fit: contain;
+      background: #fff;
+      padding: 18px;
+    }
+
+    .consult-note {
+      margin: 40px auto 0;
+      max-width: 760px;
+      text-align: center;
+      color: var(--ink);
+      font-size: clamp(15px, 2vw, 18px);
+      font-weight: 700;
+      line-height: 2.1;
+    }
+
+    .contact-band {
+      margin-top: 46px;
+    }
+
+    .contact-cards {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 12px 38px rgba(22, 20, 18, 0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .contact-card-icon svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .contact-card-body {
+      min-width: 0;
+    }
+
+    .contact-card-title {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .contact-card-sub {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .global-activity {
+      padding-top: 28px;
+    }
+
+    .global-card {
+      overflow: hidden;
+      border: 1px solid rgba(232, 245, 225, 0.54);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(217, 203, 134, 0.20), transparent 34%),
+        linear-gradient(135deg, rgba(24, 74, 54, 0.94), rgba(30, 93, 68, 0.88) 52%, rgba(79, 128, 84, 0.82));
+      color: #fff;
+      box-shadow: 0 24px 80px rgba(22, 64, 46, 0.20);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .global-layout {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 28px;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .global-card .section-kicker {
+      color: #dfeecb;
+    }
+
+    .global-title {
+      margin: 0;
+      font-size: clamp(28px, 4.2vw, 48px);
+      color: #fff;
+    }
+
+    .global-tag {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .global-copy {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .global-slideshow {
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .global-track {
+      display: flex;
+      gap: 12px;
+      transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .global-slide {
+      flex: 0 0 88%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .global-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .global-slide:hover img {
+      transform: scale(1.03);
+    }
+
+    .global-dots {
+      display: flex;
+      gap: 5px;
+      margin-top: 14px;
+    }
+
+    .global-dot {
+      width: 5px;
+      height: 5px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.24);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .global-dot.active {
+      width: 18px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .global-caption-area {
+      min-height: 82px;
+      margin-top: 16px;
+    }
+
+    .global-caption {
+      display: none;
+    }
+
+    .global-caption.active {
+      display: block;
+      animation: capFade 0.35s ease;
+    }
+
+    @keyframes capFade {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .global-caption-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .global-flag {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .global-country {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .global-badge {
+      padding: 3px 8px;
+      border: 1px solid rgba(223, 238, 203, 0.46);
+      border-radius: 999px;
+      color: #eaf4d4;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .global-year {
+      color: rgba(255, 255, 255, 0.46);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .global-caption p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 12.5px;
+      line-height: 1.75;
+    }
+
+    .dark-band {
+      margin: 46px 0 0;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.66);
+      color: var(--ink);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 18px 58px rgba(22, 20, 18, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .dark-band p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+      margin: 0 0 18px;
+    }
+
+    .quote {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+      font-size: clamp(24px, 3.4vw, 38px);
+      line-height: 1.28;
+      font-weight: 800;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.56);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.dark {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+      box-shadow: 0 14px 36px rgba(17, 16, 14, 0.18);
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer {
+      padding: 52px 0 60px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: Georgia, "Times New Roman", "Noto Serif JP", serif;
+      font-size: 20px;
+      letter-spacing: 0.18em;
+    }
+
+    .footer-role {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-copy {
+      margin-top: 22px;
+      color: var(--muted);
+      opacity: 0.7;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 980px) {
+      .dark-band {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-activities {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .consult-row {
+        grid-template-columns: 56px 1fr;
+        gap: 14px;
+        padding: 20px;
+      }
+
+      .consult-no {
+        font-size: 26px;
+        padding-top: 4px;
+      }
+
+      .consult-photo {
+        grid-column: 1 / -1;
+        order: -1;
+      }
+
+      .contact-band {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .global-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 22px;
+      }
+
+      .global-card {
+        border-radius: 28px;
+      }
+
+      .global-slide {
+        flex-basis: 86%;
+        border-radius: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .global-activity {
+        padding-top: 14px;
+      }
+
+      .global-layout {
+        padding: 18px;
+      }
+
+      .global-slideshow,
+      .global-slide {
+        border-radius: 20px;
+      }
+
+      .global-title {
+        font-size: clamp(27px, 8vw, 36px);
+      }
+
+      .global-caption-area {
+        min-height: 110px;
+      }
+
+      body {
+        line-height: 1.68;
+      }
+
+      .page {
+        width: min(100% - 20px, 1120px);
+      }
+
+      .back-link {
+        top: 12px;
+        left: 12px;
+        min-height: 38px;
+        padding: 7px 11px;
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 64px 0 34px;
+      }
+
+      .lit-profile {
+        border-radius: 30px;
+      }
+
+      .lit-avatar {
+        width: 112px;
+        height: 112px;
+        margin-top: 30px;
+        margin-bottom: 14px;
+        border-width: 6px;
+      }
+
+      .lit-content {
+        padding: 0 20px 26px;
+      }
+
+      h1 {
+        font-size: clamp(24px, 7.4vw, 34px);
+        line-height: 1.16;
+      }
+
+      .hero-title-ja {
+        margin-top: 14px;
+        font-size: clamp(14px, 4vw, 18px);
+        line-height: 1.45;
+      }
+
+      .lead {
+        margin-top: 18px;
+        font-size: clamp(10px, 2.8vw, 13px);
+        line-height: 1.6;
+      }
+
+      .hero-body {
+        font-size: clamp(11px, 3vw, 13px);
+      }
+
+      .profile-links {
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .profile-link {
+        width: 46px;
+        height: 46px;
+      }
+
+      .profile-link svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 46px;
+        padding: 11px 15px;
+        font-size: 13px;
+      }
+
+      section {
+        padding: 50px 0;
+        scroll-margin-top: 78px;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .section-kicker {
+        font-size: 11px;
+      }
+
+      h2 {
+        font-size: clamp(28px, 8vw, 36px);
+        line-height: 1.18;
+      }
+
+      .section-copy {
+        margin-top: 14px;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .grid-activities,
+      .services {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .identity-card {
+        padding: 14px 14px 18px;
+      }
+
+      .identity-image,
+      .identity-logo-hero {
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+      }
+
+      .service-card {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .dark-band {
+        margin-top: 38px;
+        padding: 24px;
+        border-radius: 28px;
+        gap: 18px;
+      }
+
+      .dark-band p {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .quote {
+        font-size: clamp(27px, 8vw, 36px);
+        line-height: 1.2;
+      }
+
+      footer {
+        display: block;
+        padding: 34px 0 42px;
+        line-height: 1.8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+      <path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    トップへ戻る
+  </a>
+
+  <div class="page">
+    <main id="top">
+
+      <!-- ① Hero -->
+      <section class="hero">
+        <div class="lit-profile">
+          <div class="lit-avatar">
+            <img src="assets/profile-hero.webp" alt="増尾圭亮（まっすー）" />
+          </div>
+          <div class="lit-content">
+            <div class="location-chip">山梨県笛吹市</div>
+            <h1>
+              <span class="display-name">増尾圭亮（まっすー）</span>
+            </h1>
+            <p class="lead">
+              笛吹市コミュニティプロデューサー<br>
+              FOMUS代表｜AI活用支援｜フォトグラファー
+            </p>
+            <p class="hero-body">
+              山梨県笛吹市を拠点に、<br>
+              コミュニティ、日本文化、AI、写真を通じて<br>
+              新しい価値づくりに取り組んでいます。
+            </p>
+            <div class="profile-links" aria-label="Links">
+              <a class="profile-link" href="https://www.instagram.com/masumasumasuo7" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="instagramGradient" x1="4" y1="20" x2="20" y2="4" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#feda75" />
+                      <stop offset="0.32" stop-color="#fa7e1e" />
+                      <stop offset="0.62" stop-color="#d62976" />
+                      <stop offset="1" stop-color="#4f5bd5" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="4" width="16" height="16" rx="4.6" fill="url(#instagramGradient)" />
+                  <circle cx="12" cy="12" r="3.35" fill="none" stroke="#fff" stroke-width="1.8" />
+                  <circle cx="16.7" cy="7.4" r="1.05" fill="#fff" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://note.com/kei_masu" target="_blank" rel="noopener" aria-label="note">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="4" width="14" height="16" rx="3" fill="#161412" />
+                  <path d="M9 15V9h2.1l2.8 3.7V9H16v6h-2.1l-2.8-3.7V15H9Z" fill="#fff" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://www.youtube.com/@masu_FOMUS" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3.2" y="6.4" width="17.6" height="11.2" rx="3.1" fill="#ff0033" />
+                  <path d="M10.4 9.1v5.8l5-2.9-5-2.9Z" fill="#fff" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://open.spotify.com/intl-ja/artist/3plvQP7b3NcJOuR45P7lk3?si=asugx3kuRqi5NcMsM4S2Vw" target="_blank" rel="noopener" aria-label="Spotify">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" fill="#1db954" />
+                  <path d="M7.8 9.4c2.8-.8 6.1-.5 8.4.8M8.4 12c2.2-.6 4.8-.4 6.7.6M9.1 14.4c1.6-.4 3.5-.3 4.9.5" fill="none" stroke="#11100e" stroke-width="1.45" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a class="profile-link" href="https://substack.com/@masumasuo" target="_blank" rel="noopener" aria-label="Substack">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 5h12v2.2H6V5Zm0 4.1h12v2.2H6V9.1Zm0 4.1h12V20l-6-3.4L6 20v-6.8Z" fill="#ff6719" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ②〜⑤ 活動 -->
+      <section id="activities">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Activities</div>
+            <h2>活動</h2>
+          </div>
+        </div>
+
+        <div class="grid-activities">
+          <a class="identity-card" href="https://prtimes.jp/main/html/rd/p/000000312.000091165.html" target="_blank" rel="noopener">
+            <div class="identity-media">
+              <img class="identity-image" src="assets/fuefuki-dao.webp" alt="笛吹市コミュニティプロデューサー" loading="lazy" />
+            </div>
+            <h3>笛吹市コミュニティプロデューサー</h3>
+            <p>地域イベントや交流会、コミュニティづくり。<br>人と人が自然につながるきっかけをつくる。</p>
+          </a>
+
+          <a class="identity-card" href="https://www.fomus.jp/" target="_blank" rel="noopener">
+            <div class="identity-media">
+              <div class="identity-logo-hero"><img src="assets/fomus-logo.webp" alt="FOMUSロゴ" loading="lazy" /></div>
+            </div>
+            <h3>FOMUS代表</h3>
+            <p>1300年続く日本の伝統工芸「枡」を世界へ。<br>海外での展示や文化交流を通して、日本文化の魅力を届ける。</p>
+          </a>
+
+          <a class="identity-card" href="https://studio.fomus.jp/" target="_blank" rel="noopener">
+            <div class="identity-media">
+              <img class="identity-image" src="assets/ai-business.webp" alt="AI活用支援・研修の様子" loading="lazy" />
+            </div>
+            <h3>AI導入支援</h3>
+            <p>生成AIの活用支援、業務効率化、Web制作。<br>地域事業者や企業のデジタル活用をサポート。</p>
+          </a>
+
+          <a class="identity-card" href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener">
+            <div class="identity-media">
+              <img class="identity-image" src="assets/photographer.webp" alt="フォトグラファー・増尾圭亮" loading="lazy" />
+            </div>
+            <h3>フォトグラファー</h3>
+            <p>40か国以上で活動する写真家。<br>人物・ブランド・イベント撮影を手がける。</p>
+          </a>
+
+          <a class="identity-card" href="https://fuefukibase.fomus.jp/" target="_blank" rel="noopener">
+            <div class="identity-media">
+              <div class="identity-logo-hero"><img src="assets/fuefuki-base-logo.png" alt="笛吹BASEロゴ" loading="lazy" /></div>
+            </div>
+            <h3>笛吹BASE</h3>
+            <p>紹介制の隠れ家サロン。<br>人と文化が交差する、小さな社交場。</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- 海外活動 -->
+      <section class="global-activity" aria-label="Global activities">
+        <div class="global-card">
+          <div class="global-layout">
+            <div class="global-left">
+              <div class="section-kicker">Global Activities</div>
+              <h2 class="global-title">海外活動</h2>
+              <p class="global-tag">日本文化の国際展開を、実践の場から。</p>
+              <p class="global-copy">海外の日本国大使館での展示を含む国際文化活動を通じ、枡・写真・イベント・コミュニティを世界へ届けています。</p>
+            </div>
+
+            <div class="global-right">
+              <div class="global-slideshow">
+                <div class="global-track" id="globalTrack">
+                  <div class="global-slide"><img src="assets/global-slideshow/1.0.webp" alt="FOMUS Global Ireland" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/2.webp" alt="FOMUS Global Bahrain" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/3.webp" alt="FOMUS Global Saudi Arabia" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/4.webp" alt="FOMUS Global Bahrain Arabic" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/5.webp" alt="FOMUS Global Dubai" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/6.webp" alt="FOMUS Global Ireland community" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/7.webp" alt="FOMUS Global France" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/8.webp" alt="FOMUS Global SILVA" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/9.webp" alt="Experience Japan Festival" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/10.webp" alt="FOMUS Global Ireland castle" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/11.webp" alt="Dubai Japan Fair" loading="lazy"></div>
+                  <div class="global-slide"><img src="assets/global-slideshow/12.webp" alt="Taiwan round trip" loading="lazy"></div>
+                </div>
+              </div>
+              <div class="global-dots" id="globalDots"></div>
+              <div class="global-caption-area" id="globalCaptionArea">
+                <div class="global-caption active">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">日本国大使館 展示</span><span class="global-year">2024</span></div>
+                  <p>在アイルランド日本国大使館でのレセプションパーティー。日本酒とFOMUS枡のサービスを担当。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge">天皇誕生日祝賀レセプション</span><span class="global-year">2026</span></div>
+                  <p>Sony・Nikonと並ぶ公式パートナーとしてバーレーン日本国大使館の祝賀会にて出展。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇸🇦</span><span class="global-country">Saudi Arabia</span><span class="global-badge">文化展示</span><span class="global-year">2026</span></div>
+                  <p>着物姿で「What is Masu?」を伝え続けた展示ブース。枡とKUMIKIジュエリーが並んだ。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge">ローカライズ展示</span><span class="global-year">2026</span></div>
+                  <p>アラビア語ラベルを付けた枡を展示。現地の人々に届く形で、日本文化を紹介。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge">グローバルコミュニティ</span><span class="global-year">2026</span></div>
+                  <p>ドバイで出会った世界各国の仲間たちと。多様な文化が交差する場所でイベントを主催。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">コミュニティ形成</span><span class="global-year">2024〜</span></div>
+                  <p>ダブリンにて国際交流コミュニティを運営。枡を通じて国境を越えたつながりを育てる。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇫🇷</span><span class="global-country">France</span><span class="global-badge">Marathon du Médoc</span><span class="global-year">2024, 2025</span></div>
+                  <p>ボルドーのワイン産地を走るマラソンに参加。FOMUSユニフォームで日本文化を発信。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🌍</span><span class="global-country">Europe</span><span class="global-badge">SILVAカードゲーム</span><span class="global-year">2024〜</span></div>
+                  <p>FOMUS制作カードゲーム「SILVA」を海外の仲間たちとプレイ。エンタメも国境を越えて広がる。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">Experience Japan Festival</span><span class="global-year">2024</span></div>
+                  <p>アイルランドのExperience Japan Festivalでフォトグラファーを担当。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">欧州拠点</span><span class="global-year">2024</span></div>
+                  <p>FOMUSの欧州での活動拠点のひとつ、アイルランドのシャールビル城。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge">ドバイ日本フェア</span><span class="global-year">2025</span></div>
+                  <p>ドバイ日本フェア2025。浴衣姿の人々が集う会場で、フォトグラファーとして参加。</p>
+                </div>
+                <div class="global-caption">
+                  <div class="global-caption-head"><span class="global-flag">🇹🇼</span><span class="global-country">Taiwan</span><span class="global-badge">台湾一周ランニングプロジェクト</span><span class="global-year">2023</span></div>
+                  <p>台湾を一周しながら、出会った人々へコラボ枡を届けた日本文化をつなぐ旅。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⑥ Work Together -->
+      <section id="work">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Work With Me</div>
+            <h2>依頼できること</h2>
+          </div>
+        </div>
+
+        <div class="consult-list">
+          <div class="consult-row">
+            <div class="consult-no">01</div>
+            <div class="consult-body">
+              <h3>コラボレーション</h3>
+              <p>地域・企業・店舗との共同企画、イベント、PR施策などを一緒に形にします。</p>
+            </div>
+            <img class="consult-photo" src="assets/community-event.webp" alt="地域・企業とのコラボレーション" loading="lazy" />
+          </div>
+
+          <div class="consult-row">
+            <div class="consult-no">02</div>
+            <div class="consult-body">
+              <h3>撮影</h3>
+              <p>人物撮影、店舗撮影、イベント撮影、ブランド撮影など、魅力を引き出す写真をお届けします。</p>
+            </div>
+            <img class="consult-photo" src="assets/photographer.webp" alt="撮影" loading="lazy" />
+          </div>
+
+          <div class="consult-row">
+            <div class="consult-no">03</div>
+            <div class="consult-body">
+              <h3>オリジナル枡制作</h3>
+              <p>記念品、ノベルティ、店舗用、イベント用などオリジナルの枡を制作します。日本の伝統と想いを込めた特別な一品に。</p>
+            </div>
+            <img class="consult-photo" src="assets/kumiki.jpg" alt="オリジナル枡制作" loading="lazy" />
+          </div>
+
+          <div class="consult-row">
+            <div class="consult-no">04</div>
+            <div class="consult-body">
+              <h3>AI導入・ウェブ制作</h3>
+              <p>生成AI研修、業務効率化、社内活用の仕組みづくりから、プロフィールサイト、LP、店舗サイトなどのWeb制作まで、実践的にサポートします。</p>
+            </div>
+            <img class="consult-photo" src="assets/ai-business.webp" alt="AI導入・ウェブ制作" loading="lazy" />
+          </div>
+
+          <div class="consult-row">
+            <div class="consult-no">05</div>
+            <div class="consult-body">
+              <h3>講演会</h3>
+              <p>AI、海外展開、日本文化、地域活動、これからの働き方など、幅広いテーマでお話しします。</p>
+            </div>
+            <img class="consult-photo" src="assets/global-slideshow/9.webp" alt="講演会・イベント登壇" loading="lazy" />
+          </div>
+        </div>
+
+        <p class="consult-note">
+          撮影、AI導入、Web制作、講演、オリジナル枡制作、地域・企業とのコラボレーションまで。<br>内容が固まっていない段階でも、お気軽にご相談ください。
+        </p>
+
+        <!-- ⑦ Contact -->
+        <div class="contact-band">
+          <div class="contact-cards">
+            <a class="contact-card" href="https://www.instagram.com/masumasumasuo7" target="_blank" rel="noopener">
+              <span class="contact-card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="igGradContact" x1="4" y1="20" x2="20" y2="4" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#feda75" />
+                      <stop offset="0.32" stop-color="#fa7e1e" />
+                      <stop offset="0.62" stop-color="#d62976" />
+                      <stop offset="1" stop-color="#4f5bd5" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="4" width="16" height="16" rx="4.6" fill="url(#igGradContact)" />
+                  <circle cx="12" cy="12" r="3.35" fill="none" stroke="#fff" stroke-width="1.8" />
+                  <circle cx="16.7" cy="7.4" r="1.05" fill="#fff" />
+                </svg>
+              </span>
+              <span class="contact-card-body">
+                <span class="contact-card-title">Instagramで相談する</span>
+                <span class="contact-card-sub">DMでお気軽にご連絡ください</span>
+              </span>
+            </a>
+            <a class="contact-card" href="mailto:masu.fuefuki@gmail.com">
+              <span class="contact-card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="4.6" fill="#161412" />
+                  <rect x="7" y="8.4" width="10" height="7.2" rx="1.4" fill="#fff" />
+                  <path d="M7.6 9.2l4.4 3.3 4.4-3.3" fill="none" stroke="#161412" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <span class="contact-card-body">
+                <span class="contact-card-title">メールで相談する</span>
+                <span class="contact-card-sub">24時間以内に返信します</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-name">まっすー</div>
+      <div class="footer-role">笛吹市コミュニティプロデューサー</div>
+      <div class="footer-copy">© FOMUS</div>
+    </footer>
+  </div>
+  <script>
+    const globalTrack = document.getElementById("globalTrack");
+    const globalSlides = globalTrack ? Array.from(globalTrack.querySelectorAll(".global-slide")) : [];
+    const globalDots = document.getElementById("globalDots");
+    const globalCaptions = Array.from(document.querySelectorAll("#globalCaptionArea .global-caption"));
+    let globalIndex = 0;
+    let globalTimer = null;
+
+    function showGlobalSlide(nextIndex) {
+      if (!globalSlides.length || !globalDots) return;
+      const dots = Array.from(globalDots.querySelectorAll(".global-dot"));
+      dots[globalIndex]?.classList.remove("active");
+      globalCaptions[globalIndex]?.classList.remove("active");
+      globalIndex = nextIndex;
+      const slideGap = 12;
+      const slideWidth = globalSlides[0].offsetWidth + slideGap;
+      globalTrack.style.transform = `translateX(-${globalIndex * slideWidth}px)`;
+      dots[globalIndex]?.classList.add("active");
+      globalCaptions[globalIndex]?.classList.add("active");
+    }
+
+    function startGlobalSlideshow() {
+      if (!globalSlides.length || !globalDots) return;
+      globalDots.innerHTML = "";
+      globalSlides.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.className = `global-dot${index === 0 ? " active" : ""}`;
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Global activity slide ${index + 1}`);
+        dot.addEventListener("click", () => {
+          clearInterval(globalTimer);
+          showGlobalSlide(index);
+          globalTimer = setInterval(() => {
+            showGlobalSlide((globalIndex + 1) % globalSlides.length);
+          }, 4200);
+        });
+        globalDots.appendChild(dot);
+      });
+      globalTrack.style.cursor = "pointer";
+      globalTrack.addEventListener("click", () => {
+        clearInterval(globalTimer);
+        showGlobalSlide((globalIndex + 1) % globalSlides.length);
+        globalTimer = setInterval(() => {
+          showGlobalSlide((globalIndex + 1) % globalSlides.length);
+        }, 4200);
+      });
+      globalTimer = setInterval(() => {
+        showGlobalSlide((globalIndex + 1) % globalSlides.length);
+      }, 4200);
+      window.addEventListener("resize", () => showGlobalSlide(globalIndex));
+    }
+
+    startGlobalSlideshow();
+  </script>
+</body>
+</html>

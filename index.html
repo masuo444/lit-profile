@@ -1194,8 +1194,8 @@
               <span class="display-name" data-ja="Keisuke Masuo (まっすー)" data-en="Kei (MaSU)">Keisuke Masuo (まっすー)</span>
               <span class="hero-title-ja" data-ja="日本文化 × AI × エンタメで、世界をつなぐ。" data-en="Bringing Japanese culture, AI, and entertainment to the world.">日本文化 × AI × エンタメで、世界をつなぐ。</span>
             </h1>
-            <p class="lead" data-ja="FOMUS代表 / AI導入コンサルタント / 笛吹市地域おこし協力隊DAO" data-en="Founder of FOMUS / AI Implementation Consultant / Fuefuki City Regional Revitalization DAO">
-              FOMUS代表 / AI導入コンサルタント / 笛吹市地域おこし協力隊DAO
+            <p class="lead" data-ja="FOMUS代表 / AI導入コンサルタント / 笛吹市コミュニティプロデューサー" data-en="Founder of FOMUS / AI Implementation Consultant / Fuefuki City Community Producer">
+              FOMUS代表 / AI導入コンサルタント / 笛吹市コミュニティプロデューサー
             </p>
             <div class="profile-links" aria-label="Links">
               <a class="profile-link" href="https://www.instagram.com/masumasumasuo7" target="_blank" rel="noopener" aria-label="Instagram">
@@ -1264,12 +1264,12 @@
               <p data-ja="1300年続く日本の伝統工芸「枡」を世界へ。<br>FOMUSを通じて、日本文化の価値を発信。" data-en="Bringing masu, a 1,300-year-old Japanese craft, to the world.<br>Through FOMUS, I share the value of Japanese culture.">1300年続く日本の伝統工芸「枡」を世界へ。<br>FOMUSを通じて、日本文化の価値を発信。</p>
             </div>
           </a>
-          <a class="identity-card" href="https://www.fuefuki-kanko.jp/" target="_blank" rel="noopener">
+          <a class="identity-card" href="https://prtimes.jp/main/html/rd/p/000000312.000091165.html" target="_blank" rel="noopener">
             <div>
               <div class="identity-media">
-                <img class="identity-image dao" src="assets/fuefuki-dao.webp" alt="笛吹市地域おこし協力隊DAOのイメージ" loading="lazy" />
+                <img class="identity-image dao" src="assets/fuefuki-dao.webp" alt="笛吹市コミュニティプロデューサーのイメージ" loading="lazy" />
               </div>
-              <h3 data-ja="笛吹市地域おこし協力隊DAO" data-en="Fuefuki Regional Revitalization DAO">笛吹市地域おこし協力隊DAO</h3>
+              <h3 data-ja="笛吹市コミュニティプロデューサー" data-en="Fuefuki City Community Producer">笛吹市コミュニティプロデューサー</h3>
               <p data-ja="地域と人をつなぐコミュニティづくり。<br>共創プロジェクトや交流の場を企画。" data-en="Building communities that connect local culture and people.<br>Planning co-creation projects and spaces for exchange.">地域と人をつなぐコミュニティづくり。<br>共創プロジェクトや交流の場を企画。</p>
             </div>
           </a>
@@ -1578,6 +1578,14 @@
           }, 4200);
         });
         globalDots.appendChild(dot);
+      });
+      globalTrack.style.cursor = "pointer";
+      globalTrack.addEventListener("click", () => {
+        clearInterval(globalTimer);
+        showGlobalSlide((globalIndex + 1) % globalSlides.length);
+        globalTimer = setInterval(() => {
+          showGlobalSlide((globalIndex + 1) % globalSlides.length);
+        }, 4200);
       });
       globalTimer = setInterval(() => {
         showGlobalSlide((globalIndex + 1) % globalSlides.length);
