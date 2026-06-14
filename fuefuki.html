@@ -133,6 +133,38 @@
       display: block;
     }
 
+    .lang-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 30;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 42px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.70);
+      color: var(--ink);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 12px 34px rgba(22, 20, 18, 0.10);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      cursor: pointer;
+    }
+
+    .lang-toggle span {
+      opacity: 0.42;
+    }
+
+    html[lang="ja"] .lang-toggle .lang-ja,
+    html[lang="en"] .lang-toggle .lang-en {
+      opacity: 1;
+    }
+
     .hero {
       min-height: 84vh;
       display: grid;
@@ -873,6 +905,14 @@
         font-size: 11px;
       }
 
+      .lang-toggle {
+        top: 12px;
+        right: 12px;
+        min-height: 38px;
+        padding: 7px 10px;
+        font-size: 11px;
+      }
+
       .hero {
         min-height: auto;
         padding: 64px 0 34px;
@@ -1019,8 +1059,13 @@
     <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
       <path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    トップへ戻る
+    <span data-ja="トップへ戻る" data-en="Back to Top">トップへ戻る</span>
   </a>
+  <button class="lang-toggle" type="button" aria-label="Switch language" aria-pressed="false">
+    <span class="lang-ja">JP</span>
+    /
+    <span class="lang-en">EN</span>
+  </button>
 
   <div class="page">
     <main id="top">
@@ -1032,15 +1077,15 @@
             <img src="assets/profile-hero.webp" alt="増尾圭亮（まっすー）" />
           </div>
           <div class="lit-content">
-            <div class="location-chip">山梨県笛吹市</div>
+            <div class="location-chip" data-ja="山梨県笛吹市" data-en="Fuefuki, Yamanashi">山梨県笛吹市</div>
             <h1>
-              <span class="display-name">増尾圭亮（まっすー）</span>
+              <span class="display-name" data-ja="増尾圭亮（まっすー）" data-en="Keisuke Masuo (MaSU)">増尾圭亮（まっすー）</span>
             </h1>
-            <p class="lead">
+            <p class="lead" data-ja="笛吹市地域共創プロデューサー<br>FOMUS代表｜AI活用支援｜フォトグラファー" data-en="Fuefuki City Co-Creation Producer<br>Founder of FOMUS｜AI Support｜Photographer">
               笛吹市地域共創プロデューサー<br>
               FOMUS代表｜AI活用支援｜フォトグラファー
             </p>
-            <p class="hero-body">
+            <p class="hero-body" data-ja="山梨県笛吹市を拠点に、<br>コミュニティ、日本文化、AI、写真を通じて<br>新しい価値づくりに取り組んでいます。" data-en="Based in Fuefuki City, Yamanashi,<br>I create new value through community,<br>Japanese culture, AI, and photography.">
               山梨県笛吹市を拠点に、<br>
               コミュニティ、日本文化、AI、写真を通じて<br>
               新しい価値づくりに取り組んでいます。
@@ -1094,7 +1139,7 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Activities</div>
-            <h2>活動</h2>
+            <h2 data-ja="活動" data-en="Activities">活動</h2>
           </div>
         </div>
 
@@ -1103,40 +1148,40 @@
             <div class="identity-media">
               <img class="identity-image" src="assets/fuefuki-dao.webp" alt="笛吹市地域共創プロデューサー" loading="lazy" />
             </div>
-            <h3>笛吹市地域共創プロデューサー</h3>
-            <p>地域イベントや交流会、コミュニティづくり。<br>人と人が自然につながるきっかけをつくる。</p>
+            <h3 data-ja="笛吹市地域共創プロデューサー" data-en="Fuefuki City Co-Creation Producer">笛吹市地域共創プロデューサー</h3>
+            <p data-ja="地域イベントや交流会、コミュニティづくり。<br>人と人が自然につながるきっかけをつくる。" data-en="Local events, gatherings, and community building.<br>Creating natural connections between people.">地域イベントや交流会、コミュニティづくり。<br>人と人が自然につながるきっかけをつくる。</p>
           </a>
 
           <a class="identity-card" href="https://www.fomus.jp/" target="_blank" rel="noopener">
             <div class="identity-media">
               <div class="identity-logo-hero"><img src="assets/fomus-logo.webp" alt="FOMUSロゴ" loading="lazy" /></div>
             </div>
-            <h3>FOMUS代表</h3>
-            <p>1300年続く日本の伝統工芸「枡」を世界へ。<br>海外での展示や文化交流を通して、日本文化の魅力を届ける。</p>
+            <h3 data-ja="FOMUS代表" data-en="Founder of FOMUS">FOMUS代表</h3>
+            <p data-ja="1300年続く日本の伝統工芸「枡」を世界へ。<br>海外での展示や文化交流を通して、日本文化の魅力を届ける。" data-en="Bringing masu, a 1,300-year-old Japanese craft, to the world.<br>Sharing Japanese culture through exhibitions and exchange abroad.">1300年続く日本の伝統工芸「枡」を世界へ。<br>海外での展示や文化交流を通して、日本文化の魅力を届ける。</p>
           </a>
 
           <a class="identity-card" href="https://studio.fomus.jp/" target="_blank" rel="noopener">
             <div class="identity-media">
               <img class="identity-image" src="assets/ai-business.webp" alt="AI活用支援・研修の様子" loading="lazy" />
             </div>
-            <h3>AI導入支援</h3>
-            <p>生成AIの活用支援、業務効率化、Web制作。<br>地域事業者や企業のデジタル活用をサポート。</p>
+            <h3 data-ja="AI導入支援" data-en="AI Implementation Support">AI導入支援</h3>
+            <p data-ja="生成AIの活用支援、業務効率化、Web制作。<br>地域事業者や企業のデジタル活用をサポート。" data-en="Generative AI adoption, workflow improvement, and web production.<br>Supporting digital transformation for local businesses and companies.">生成AIの活用支援、業務効率化、Web制作。<br>地域事業者や企業のデジタル活用をサポート。</p>
           </a>
 
           <a class="identity-card" href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener">
             <div class="identity-media">
               <img class="identity-image" src="assets/photographer.webp" alt="フォトグラファー・増尾圭亮" loading="lazy" />
             </div>
-            <h3>フォトグラファー</h3>
-            <p>40か国以上で活動する写真家。<br>人物・ブランド・イベント撮影を手がける。</p>
+            <h3 data-ja="フォトグラファー" data-en="Photographer">フォトグラファー</h3>
+            <p data-ja="40か国以上で活動する写真家。<br>人物・ブランド・イベント撮影を手がける。" data-en="A photographer who has worked across 40+ countries.<br>Portrait, brand, and event photography.">40か国以上で活動する写真家。<br>人物・ブランド・イベント撮影を手がける。</p>
           </a>
 
           <a class="identity-card" href="https://fuefukibase.fomus.jp/" target="_blank" rel="noopener">
             <div class="identity-media">
               <div class="identity-logo-hero"><img src="assets/fuefuki-base-logo.png" alt="笛吹BASEロゴ" loading="lazy" /></div>
             </div>
-            <h3>笛吹BASE</h3>
-            <p>紹介制の隠れ家サロン。<br>人と文化が交差する、小さな社交場。</p>
+            <h3 data-ja="笛吹BASE" data-en="Fuefuki BASE">笛吹BASE</h3>
+            <p data-ja="紹介制の隠れ家サロン。<br>人と文化が交差する、小さな社交場。" data-en="An invite-only hideaway salon.<br>A small social space where people and culture meet.">紹介制の隠れ家サロン。<br>人と文化が交差する、小さな社交場。</p>
           </a>
         </div>
       </section>
@@ -1147,9 +1192,9 @@
           <div class="global-layout">
             <div class="global-left">
               <div class="section-kicker">Global Activities</div>
-              <h2 class="global-title">海外活動</h2>
-              <p class="global-tag">日本文化の国際展開を、実践の場から。</p>
-              <p class="global-copy">海外の日本国大使館での展示を含む国際文化活動を通じ、枡・写真・イベント・コミュニティを世界へ届けています。</p>
+              <h2 class="global-title" data-ja="海外活動" data-en="Global Work">海外活動</h2>
+              <p class="global-tag" data-ja="日本文化の国際展開を、実践の場から。" data-en="Bringing Japanese culture abroad through real-world projects.">日本文化の国際展開を、実践の場から。</p>
+              <p class="global-copy" data-ja="海外の日本国大使館での展示を含む国際文化活動を通じ、枡・写真・イベント・コミュニティを世界へ届けています。" data-en="Through cultural projects including exhibitions at Japanese embassies, I share masu, photography, events, and community experiences with the world.">海外の日本国大使館での展示を含む国際文化活動を通じ、枡・写真・イベント・コミュニティを世界へ届けています。</p>
             </div>
 
             <div class="global-right">
@@ -1172,52 +1217,52 @@
               <div class="global-dots" id="globalDots"></div>
               <div class="global-caption-area" id="globalCaptionArea">
                 <div class="global-caption active">
-                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">日本国大使館 展示</span><span class="global-year">2024</span></div>
-                  <p>在アイルランド日本国大使館でのレセプションパーティー。日本酒とFOMUS枡のサービスを担当。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge" data-ja="日本国大使館 展示" data-en="Japanese Embassy">日本国大使館 展示</span><span class="global-year">2024</span></div>
+                  <p data-ja="在アイルランド日本国大使館でのレセプションパーティー。日本酒とFOMUS枡のサービスを担当。" data-en="A reception at the Embassy of Japan in Ireland, serving Japanese sake with FOMUS masu.">在アイルランド日本国大使館でのレセプションパーティー。日本酒とFOMUS枡のサービスを担当。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge">天皇誕生日祝賀レセプション</span><span class="global-year">2026</span></div>
-                  <p>Sony・Nikonと並ぶ公式パートナーとしてバーレーン日本国大使館の祝賀会にて出展。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge" data-ja="天皇誕生日祝賀レセプション" data-en="National Day Reception">天皇誕生日祝賀レセプション</span><span class="global-year">2026</span></div>
+                  <p data-ja="Sony・Nikonと並ぶ公式パートナーとしてバーレーン日本国大使館の祝賀会にて出展。" data-en="Exhibited at the Embassy of Japan in Bahrain as an official partner alongside Sony and Nikon.">Sony・Nikonと並ぶ公式パートナーとしてバーレーン日本国大使館の祝賀会にて出展。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇸🇦</span><span class="global-country">Saudi Arabia</span><span class="global-badge">文化展示</span><span class="global-year">2026</span></div>
-                  <p>着物姿で「What is Masu?」を伝え続けた展示ブース。枡とKUMIKIジュエリーが並んだ。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇸🇦</span><span class="global-country">Saudi Arabia</span><span class="global-badge" data-ja="文化展示" data-en="Cultural Showcase">文化展示</span><span class="global-year">2026</span></div>
+                  <p data-ja="着物姿で「What is Masu?」を伝え続けた展示ブース。枡とKUMIKIジュエリーが並んだ。" data-en="A booth introducing “What is Masu?” with masu and KUMIKI jewelry displayed together.">着物姿で「What is Masu?」を伝え続けた展示ブース。枡とKUMIKIジュエリーが並んだ。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge">ローカライズ展示</span><span class="global-year">2026</span></div>
-                  <p>アラビア語ラベルを付けた枡を展示。現地の人々に届く形で、日本文化を紹介。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇧🇭</span><span class="global-country">Bahrain</span><span class="global-badge" data-ja="ローカライズ展示" data-en="Localized Display">ローカライズ展示</span><span class="global-year">2026</span></div>
+                  <p data-ja="アラビア語ラベルを付けた枡を展示。現地の人々に届く形で、日本文化を紹介。" data-en="Displayed masu with Arabic labels, presenting Japanese culture in a way that resonated locally.">アラビア語ラベルを付けた枡を展示。現地の人々に届く形で、日本文化を紹介。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge">グローバルコミュニティ</span><span class="global-year">2026</span></div>
-                  <p>ドバイで出会った世界各国の仲間たちと。多様な文化が交差する場所でイベントを主催。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge" data-ja="グローバルコミュニティ" data-en="Global Community">グローバルコミュニティ</span><span class="global-year">2026</span></div>
+                  <p data-ja="ドバイで出会った世界各国の仲間たちと。多様な文化が交差する場所でイベントを主催。" data-en="Hosting events in Dubai, where people from many cultures meet and connect.">ドバイで出会った世界各国の仲間たちと。多様な文化が交差する場所でイベントを主催。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">コミュニティ形成</span><span class="global-year">2024〜</span></div>
-                  <p>ダブリンにて国際交流コミュニティを運営。枡を通じて国境を越えたつながりを育てる。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge" data-ja="コミュニティ形成" data-en="Community Building">コミュニティ形成</span><span class="global-year">2024〜</span></div>
+                  <p data-ja="ダブリンにて国際交流コミュニティを運営。枡を通じて国境を越えたつながりを育てる。" data-en="Running an international community in Dublin and building cross-border connections through masu.">ダブリンにて国際交流コミュニティを運営。枡を通じて国境を越えたつながりを育てる。</p>
                 </div>
                 <div class="global-caption">
                   <div class="global-caption-head"><span class="global-flag">🇫🇷</span><span class="global-country">France</span><span class="global-badge">Marathon du Médoc</span><span class="global-year">2024, 2025</span></div>
-                  <p>ボルドーのワイン産地を走るマラソンに参加。FOMUSユニフォームで日本文化を発信。</p>
+                  <p data-ja="ボルドーのワイン産地を走るマラソンに参加。FOMUSユニフォームで日本文化を発信。" data-en="Joining the Marathon du Médoc in Bordeaux and sharing FOMUS through a cultural presence.">ボルドーのワイン産地を走るマラソンに参加。FOMUSユニフォームで日本文化を発信。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🌍</span><span class="global-country">Europe</span><span class="global-badge">SILVAカードゲーム</span><span class="global-year">2024〜</span></div>
-                  <p>FOMUS制作カードゲーム「SILVA」を海外の仲間たちとプレイ。エンタメも国境を越えて広がる。</p>
+                  <div class="global-caption-head"><span class="global-flag">🌍</span><span class="global-country">Europe</span><span class="global-badge" data-ja="SILVAカードゲーム" data-en="SILVA Card Game">SILVAカードゲーム</span><span class="global-year">2024〜</span></div>
+                  <p data-ja="FOMUS制作カードゲーム「SILVA」を海外の仲間たちとプレイ。エンタメも国境を越えて広がる。" data-en="Playing the FOMUS card game SILVA with friends abroad, expanding entertainment across borders.">FOMUS制作カードゲーム「SILVA」を海外の仲間たちとプレイ。エンタメも国境を越えて広がる。</p>
                 </div>
                 <div class="global-caption">
                   <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">Experience Japan Festival</span><span class="global-year">2024</span></div>
-                  <p>アイルランドのExperience Japan Festivalでフォトグラファーを担当。</p>
+                  <p data-ja="アイルランドのExperience Japan Festivalでフォトグラファーを担当。" data-en="Worked as a photographer at Experience Japan Festival in Ireland.">アイルランドのExperience Japan Festivalでフォトグラファーを担当。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge">欧州拠点</span><span class="global-year">2024</span></div>
-                  <p>FOMUSの欧州での活動拠点のひとつ、アイルランドのシャールビル城。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇮🇪</span><span class="global-country">Ireland</span><span class="global-badge" data-ja="欧州拠点" data-en="European Base">欧州拠点</span><span class="global-year">2024</span></div>
+                  <p data-ja="FOMUSの欧州での活動拠点のひとつ、アイルランドのシャールビル城。" data-en="Charleville Castle in Ireland, one of the bases for FOMUS activities in Europe.">FOMUSの欧州での活動拠点のひとつ、アイルランドのシャールビル城。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge">ドバイ日本フェア</span><span class="global-year">2025</span></div>
-                  <p>ドバイ日本フェア2025。浴衣姿の人々が集う会場で、フォトグラファーとして参加。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇦🇪</span><span class="global-country">Dubai</span><span class="global-badge" data-ja="ドバイ日本フェア" data-en="Dubai Japan Fair">ドバイ日本フェア</span><span class="global-year">2025</span></div>
+                  <p data-ja="ドバイ日本フェア2025。浴衣姿の人々が集う会場で、フォトグラファーとして参加。" data-en="Joined Dubai Japan Fair 2025 as a photographer in a lively celebration of Japanese culture.">ドバイ日本フェア2025。浴衣姿の人々が集う会場で、フォトグラファーとして参加。</p>
                 </div>
                 <div class="global-caption">
-                  <div class="global-caption-head"><span class="global-flag">🇹🇼</span><span class="global-country">Taiwan</span><span class="global-badge">台湾一周ランニングプロジェクト</span><span class="global-year">2023</span></div>
-                  <p>台湾を一周しながら、出会った人々へコラボ枡を届けた日本文化をつなぐ旅。</p>
+                  <div class="global-caption-head"><span class="global-flag">🇹🇼</span><span class="global-country">Taiwan</span><span class="global-badge" data-ja="台湾一周ランニングプロジェクト" data-en="Taiwan Round-Island Run">台湾一周ランニングプロジェクト</span><span class="global-year">2023</span></div>
+                  <p data-ja="台湾を一周しながら、出会った人々へコラボ枡を届けた日本文化をつなぐ旅。" data-en="A journey around Taiwan, gifting collaborative masu to people met along the way.">台湾を一周しながら、出会った人々へコラボ枡を届けた日本文化をつなぐ旅。</p>
                 </div>
               </div>
             </div>
@@ -1230,7 +1275,7 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Work With Me</div>
-            <h2>依頼できること</h2>
+            <h2 data-ja="依頼できること" data-en="What I Can Do">依頼できること</h2>
           </div>
         </div>
 
@@ -1238,8 +1283,8 @@
           <div class="consult-row">
             <div class="consult-no">01</div>
             <div class="consult-body">
-              <h3>コラボレーション</h3>
-              <p>地域・企業・店舗との共同企画、イベント、PR施策などを一緒に形にします。</p>
+              <h3 data-ja="コラボレーション" data-en="Collaboration">コラボレーション</h3>
+              <p data-ja="地域・企業・店舗との共同企画、イベント、PR施策などを一緒に形にします。" data-en="Joint projects, events, and PR initiatives with local communities, companies, and shops.">地域・企業・店舗との共同企画、イベント、PR施策などを一緒に形にします。</p>
             </div>
             <img class="consult-photo" src="assets/community-event.webp" alt="地域・企業とのコラボレーション" loading="lazy" />
           </div>
@@ -1247,8 +1292,8 @@
           <div class="consult-row">
             <div class="consult-no">02</div>
             <div class="consult-body">
-              <h3>撮影</h3>
-              <p>人物撮影、店舗撮影、イベント撮影、ブランド撮影など、魅力を引き出す写真をお届けします。</p>
+              <h3 data-ja="撮影" data-en="Photography">撮影</h3>
+              <p data-ja="人物撮影、店舗撮影、イベント撮影、ブランド撮影など、魅力を引き出す写真をお届けします。" data-en="Portrait, shop, event, and brand photography — capturing images that bring out the best.">人物撮影、店舗撮影、イベント撮影、ブランド撮影など、魅力を引き出す写真をお届けします。</p>
             </div>
             <img class="consult-photo" src="assets/photographer.webp" alt="撮影" loading="lazy" />
           </div>
@@ -1256,8 +1301,8 @@
           <div class="consult-row">
             <div class="consult-no">03</div>
             <div class="consult-body">
-              <h3>オリジナル枡制作</h3>
-              <p>記念品、ノベルティ、店舗用、イベント用などオリジナルの枡を制作します。日本の伝統と想いを込めた特別な一品に。</p>
+              <h3 data-ja="オリジナル枡制作" data-en="Custom Masu">オリジナル枡制作</h3>
+              <p data-ja="記念品、ノベルティ、店舗用、イベント用などオリジナルの枡を制作します。日本の伝統と想いを込めた特別な一品に。" data-en="Custom masu for keepsakes, novelties, shops, and events — a special piece carrying Japanese tradition and meaning.">記念品、ノベルティ、店舗用、イベント用などオリジナルの枡を制作します。日本の伝統と想いを込めた特別な一品に。</p>
             </div>
             <img class="consult-photo" src="assets/kumiki.jpg" alt="オリジナル枡制作" loading="lazy" />
           </div>
@@ -1265,8 +1310,8 @@
           <div class="consult-row">
             <div class="consult-no">04</div>
             <div class="consult-body">
-              <h3>AI導入・ウェブ制作</h3>
-              <p>生成AI研修、業務効率化、社内活用の仕組みづくりから、プロフィールサイト、LP、店舗サイトなどのWeb制作まで、実践的にサポートします。</p>
+              <h3 data-ja="AI導入・ウェブ制作" data-en="AI & Web">AI導入・ウェブ制作</h3>
+              <p data-ja="生成AI研修、業務効率化、社内活用の仕組みづくりから、プロフィールサイト、LP、店舗サイトなどのWeb制作まで、実践的にサポートします。" data-en="From generative AI training and workflow improvement to profile sites, landing pages, and shop websites — practical support across the board.">生成AI研修、業務効率化、社内活用の仕組みづくりから、プロフィールサイト、LP、店舗サイトなどのWeb制作まで、実践的にサポートします。</p>
             </div>
             <img class="consult-photo" src="assets/ai-business.webp" alt="AI導入・ウェブ制作" loading="lazy" />
           </div>
@@ -1274,14 +1319,14 @@
           <div class="consult-row">
             <div class="consult-no">05</div>
             <div class="consult-body">
-              <h3>講演会</h3>
-              <p>AI、海外展開、日本文化、地域活動、これからの働き方など、幅広いテーマでお話しします。</p>
+              <h3 data-ja="講演会" data-en="Talks">講演会</h3>
+              <p data-ja="AI、海外展開、日本文化、地域活動、これからの働き方など、幅広いテーマでお話しします。" data-en="Talks on AI, global expansion, Japanese culture, regional activities, and the future of work.">AI、海外展開、日本文化、地域活動、これからの働き方など、幅広いテーマでお話しします。</p>
             </div>
             <img class="consult-photo" src="assets/global-slideshow/9.webp" alt="講演会・イベント登壇" loading="lazy" />
           </div>
         </div>
 
-        <p class="consult-note">
+        <p class="consult-note" data-ja="撮影、AI導入、Web制作、講演、オリジナル枡制作、地域・企業とのコラボレーションまで。<br>内容が固まっていない段階でも、お気軽にご相談ください。" data-en="From photography, AI, and web production to talks, custom masu, and collaborations with communities and companies.<br>Feel free to reach out even before the details are decided.">
           撮影、AI導入、Web制作、講演、オリジナル枡制作、地域・企業とのコラボレーションまで。<br>内容が固まっていない段階でも、お気軽にご相談ください。
         </p>
 
@@ -1305,8 +1350,8 @@
                 </svg>
               </span>
               <span class="contact-card-body">
-                <span class="contact-card-title">Instagramで相談する</span>
-                <span class="contact-card-sub">DMでお気軽にご連絡ください</span>
+                <span class="contact-card-title" data-ja="Instagramで相談する" data-en="Reach out on Instagram">Instagramで相談する</span>
+                <span class="contact-card-sub" data-ja="DMでお気軽にご連絡ください" data-en="Feel free to send a DM">DMでお気軽にご連絡ください</span>
               </span>
             </a>
             <a class="contact-card" href="mailto:masu.fuefuki@gmail.com">
@@ -1318,8 +1363,8 @@
                 </svg>
               </span>
               <span class="contact-card-body">
-                <span class="contact-card-title">メールで相談する</span>
-                <span class="contact-card-sub">24時間以内に返信します</span>
+                <span class="contact-card-title" data-ja="メールで相談する" data-en="Reach out by email">メールで相談する</span>
+                <span class="contact-card-sub" data-ja="24時間以内に返信します" data-en="I reply within 24 hours">24時間以内に返信します</span>
               </span>
             </a>
           </div>
@@ -1329,12 +1374,64 @@
     </main>
 
     <footer>
-      <div class="footer-name">まっすー</div>
-      <div class="footer-role">笛吹市地域共創プロデューサー</div>
+      <div class="footer-name" data-ja="まっすー" data-en="MaSU">まっすー</div>
+      <div class="footer-role" data-ja="笛吹市地域共創プロデューサー" data-en="Fuefuki City Co-Creation Producer">笛吹市地域共創プロデューサー</div>
       <div class="footer-copy">© FOMUS</div>
     </footer>
   </div>
   <script>
+    const languageButton = document.querySelector(".lang-toggle");
+    const translatableElements = document.querySelectorAll("[data-ja][data-en]");
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function getSavedLanguage() {
+      try {
+        return localStorage.getItem("profileLanguage");
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function saveLanguage(language) {
+      try {
+        localStorage.setItem("profileLanguage", language);
+      } catch (error) {
+        // localStorage may be unavailable on file://; switching still works.
+      }
+    }
+
+    function setLanguage(language) {
+      const isEnglish = language === "en";
+      document.documentElement.lang = language;
+      document.title = isEnglish
+        ? "Keisuke Masuo (MaSU) | Fuefuki City Co-Creation Producer"
+        : "増尾圭亮（まっすー）| 笛吹市地域共創プロデューサー";
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          "content",
+          isEnglish
+            ? "Keisuke Masuo (MaSU), based in Fuefuki City, Yamanashi. Creating new value through community, Japanese culture, AI, and photography."
+            : "山梨県笛吹市を拠点に、コミュニティ・日本文化・AI・写真を通じて新しい価値づくりに取り組む増尾圭亮（まっすー）。"
+        );
+      }
+      translatableElements.forEach((element) => {
+        element.innerHTML = element.dataset[language];
+      });
+      if (languageButton) {
+        languageButton.setAttribute("aria-pressed", String(isEnglish));
+      }
+      saveLanguage(language);
+    }
+
+    const savedLanguage = getSavedLanguage() === "en" ? "en" : "ja";
+    setLanguage(savedLanguage);
+
+    if (languageButton) {
+      languageButton.addEventListener("click", () => {
+        setLanguage(document.documentElement.lang === "ja" ? "en" : "ja");
+      });
+    }
+
     const globalTrack = document.getElementById("globalTrack");
     const globalSlides = globalTrack ? Array.from(globalTrack.querySelectorAll(".global-slide")) : [];
     const globalDots = document.getElementById("globalDots");
